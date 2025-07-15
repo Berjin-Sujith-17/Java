@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+// Program for sorting an array using Insersion Sort
+public class main {
+    public static void main(String[] args) {
+        // Scanner scan = new Scanner(System.in);
+        int[] nums = {64,34,25,12,22,11,90};
+        insertionSort(nums);
+        System.out.println("Sorted array: " + Arrays.toString(nums));
+    }
+
+    static void insertionSort(int[] arr) {
+        for(int i=0; i<arr.length-1; i++)
+        {
+            for(int j=i+1; j > 0; j--)
+            {
+                if(arr[j] < arr[j-1])
+                {
+                    int temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }         
+}
